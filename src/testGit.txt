@@ -1,0 +1,7 @@
+Test git on Windows 7
+
+Window 7 on this project 
+
+Add comments:
+
+This project is read directly from a share files system.
