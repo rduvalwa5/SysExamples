@@ -32,10 +32,29 @@ class sys_functions(object):
         '''
         return  sys.api_version
 
-
+    def get_thread_info(self):
+        '''
+        sys.thread_info
+        A struct sequence holding information about the thread implementation.
+        Attribute        Explanation
+        name            Name of the thread implementation:
+                        'nt': Windows threads
+                        'pthread': POSIX threads
+                        'solaris': Solaris threads
+        lock            Name of the lock implementation:
+                        'semaphore': a lock uses a semaphore
+                        'mutex+cond': a lock uses a mutex and a condition variable
+                        None if this information is unknown
+        version         Name and version of the thread library. It is a string, or 
+                        None if these informations are unknown.
+        '''
+        return  sys.thread_info
+    
+    
 if __name__ == '__main__':
     
     thisObj = sys_functions()
     print('pythan ahd c version: \n',thisObj.get_sys_version())
     print('version_info', thisObj.get_sys_version_info())
     print('api version', thisObj.get_api_version())
+    print('thread info ', thisObj.get_thread_info())
